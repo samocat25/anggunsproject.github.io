@@ -1,0 +1,245 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background-color: #cdc3f1;
+    color: #3a2e66;
+    line-height: 1.6;
+    min-height: 100vh; display: flex; flex-direction: column;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+header {
+    background-color: rgb(255, 255, 255);
+    color: #815bb9;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 30px;
+    flex-wrap: wrap;
+    font-weight: bold;
+}
+
+header .logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+header .logo img {
+    height: 42px;
+    width: auto;
+}
+
+header .logo span {
+    font-size: 1.3rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+}
+
+nav ul li a {
+    padding: 8px 12px;
+    border-radius: 6px;
+    transition: background-color 0.4s ease;
+    transition: color 0.4s ease;
+}
+
+nav ul li a:hover,
+nav ul li a.active {
+    background-color: #815bb9; 
+    color: #f8f7ff;
+}
+
+main {
+    max-width: 1000px;
+    margin: 30px auto;
+    padding: 0 20px;
+    flex: 1; width: 100%;
+}
+
+.card {
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 25px 30px;
+    box-shadow: 0 2px 8px rgba(0, 1, 1, 0.08);
+}
+
+h1 {
+    margin-bottom: 15px;
+    color: #6734b3;
+}
+
+h2 {
+    margin-bottom: 12px;
+    color: #6734b3;
+}
+
+p {
+    margin-bottom: 10px;
+}
+
+/*beranda*/
+.steps {
+    list-style: none;
+    counter-reset: step;
+}
+
+.steps li {
+    counter-increment: step;
+    position: relative;
+    padding: 10px 10px 10px 45px;
+    margin-bottom: 10px;
+    background-color: rgb(235, 223, 247);
+    border-left: 4px solid #7165a0;
+    border-radius: 12px;
+}
+
+.steps li::before {
+    content: counter(step);
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color:#7165a0;
+    color: #fff;
+    width: 22px; height: 22px; border-radius: 50%; display: flex; font-size: 0.85rem; font-weight: bold;
+    align-items: center; justify-content: center; 
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+label {
+    font-weight: 600;
+}
+
+input[type="text"],
+input[type="number"],
+input[type="email"],
+input[type="password"],
+input[type="date"],
+select {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  font-size: 1rem;
+}
+input:focus,
+select:focus{
+    outline: none;
+    border-color: #7165a0;
+}
+.error-text {
+    color: #e74c3c;
+    font-size: 0.85rem;
+    display: none;
+}
+.btn {
+    background-color: #6734b3;
+    color: #fff; border: none; padding: 12px; border-radius: 6px; font-size: 1rem; cursor: pointer; transition: bacground-color 0.3s ease;
+    width: fit-content;
+    padding-left: 25px;
+    padding-right: 25px;
+    margin-top: 10px;
+    font-weight: 600;
+}
+.btn:hover {
+  background-color: #5B3FD6;
+}
+.link-daftar {
+    display: inline-block;
+    margin-top: 15px;
+    color: #7165a0;
+    font-weight: 600;
+}
+.link-daftar:hover{
+    text-decoration: underline;
+}
+#formMessage {
+  margin-top: 10px;
+  font-weight: 600;
+}
+
+/*tabel transaksi */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+th, td {
+    padding: 12px; text-align: left; border-bottom: 1px solid #e0e0e0;
+}
+tr:hover{
+    background-color: #f3f0fe;
+}
+/*footer*/
+footer {
+    text-align: center;
+    padding: 15px;
+    background-color: rgb(255, 255, 255);
+    color: #6734b3;
+}
+
+/*respon*/
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    nav ul {
+        flex-wrap: wrap;
+        gap: 12px;
+    }
+    main {
+        padding: 0 12px;
+    }
+    table, thead, tbody, th, td, tr {
+        display: block;
+    }
+    thead tr {
+        display: none;
+    }
+    td {
+    position: relative;
+    padding-left: 50%;
+  }
+ 
+  td::before {
+    content: attr(data-label);
+    position: absolute;
+    left: 12px;
+    font-weight: bold;
+    color: #7165a0;
+  }
+}
+@media (max-width: 480px){
+    header .logo span {
+        font-size: 1.1 rem;
+    }
+
+    .card {
+        padding: 18px;
+    }
+    .btn {
+        width: 100%;
+    }
+}

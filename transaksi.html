@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Pocket - Transaction</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="logo.png">
+            <span>My Pocket</span>
+        </div>
+
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="transaksi.html">Transaction</a></li>
+                <li><a href="profil.html">Profile</a></li>
+                <li><a href="login.html">Login</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="card">
+            <h1>Transaction Form</h1>
+            <p>Fill your transaction data in the form below.</p>
+
+            <form id="formTransaksi" novalidate>
+                <div class="form-group">
+                    <label for="namaTransaksi">Transaction Name</label>
+                    <input type="text" id="namaTransaksi" name="namaTransaksi" placeholder="Contoh: Bayar Kuliah" required>
+                    <span class="error-text" id="namaTransaksiError"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="jumlah">Total (Rp)</label>
+                    <input type="number" id="jumlah" name="jumlah" placeholder="Contoh: 50000" required>
+                    <span class="error-text" id="jumlahError"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="kategori">Category</label>
+                    <select id="kategori" name="kategori" required>
+                        <option value="">-- Select Category --</option>
+                        <option value="Pemasukan">Income</option>
+                        <option value="Pengeluaran">Expense</option>
+                        <option value="Tabungan">Savings</option>
+                    </select>
+                    <span class="error-text" id="kategoriError"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="tanggal">Date</label>
+                    <input type="date" id="tanggal" name="tanggal" required>
+                    <span class="error-text" id="tanggalError"></span>
+                    </div>
+            
+                    <button type="submit" class="btn">Save</button>
+                    <p id="formMessage"></p>
+            </form>
+            <a href="daftar-transaksi.html" class="link-daftar">Check the Transaction List &rarr;</a>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 My Pocket - Tugas UAS Pemograman Web I</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
