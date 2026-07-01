@@ -95,7 +95,7 @@ function tampilkanDaftarTransaksi() {
 
 document.addEventListener("DOMContentLoaded", tampilkanDaftarTransaksi);
 
-// ===== Validasi Form Login sederhana =====
+//Validasi Form Login 
 document.addEventListener("DOMContentLoaded", function () {
   const loginForm = document.getElementById("formLogin");
   if (!loginForm) return;
